@@ -21,7 +21,9 @@ jobs:
     - name: Install Protoc
       run: |
         sudo apt-get update -q
-        sudo apt-get install -y protobuf
+        sudo apt-get install -y protobuf-compiler
+        wget https://github.com/golang/protobuf/releases/download/v1.4.3/protoc-gen-go.v1.4.3.linux.amd64.tar.gz
+        tar -xvf protoc-gen-go.v1.4.3.linux.amd64.tar.gz
         chmod +x protoc-gen-go
         sudo mv protoc-gen-go /usr/local/bin/
 
